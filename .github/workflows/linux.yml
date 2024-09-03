@@ -144,7 +144,7 @@ jobs:
           tar -C $HOME/.wasmtime/bin --wildcards -xf wasmtime-v5.0.0-x86_64-linux.tar.xz --strip-components=1 wasmtime-v5.0.0-x86_64-linux/*
           echo "$HOME/.wasmtime/bin" >> $GITHUB_PATH
       - name: Download release artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: linux-amd64-double-zipped
       - name: Extract release tarball
@@ -363,7 +363,7 @@ jobs:
         run: |
           make CROSS=arm-linux-gnueabihf
       - name: Download amd64 release
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: linux-amd64-double-zipped
       - name: Extract amd64 release
@@ -477,7 +477,7 @@ jobs:
         run: |
           make CROSS=aarch64-linux-gnu
       - name: Download amd64 release
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: linux-amd64-double-zipped
       - name: Extract amd64 release
